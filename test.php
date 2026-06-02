@@ -1,7 +1,7 @@
 <?php
 require_once 'config/database.php';
 
-$database = new db_facturation();
+$database = new database();
 $conn = $database->getConnection();
 
 if($conn) {

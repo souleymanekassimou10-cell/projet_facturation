@@ -12,11 +12,11 @@ try {
         "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
         $user,
         $pass,
-        [
+        [  // ← Ajoutez ces crochets (tableau)
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]  // ← Fermez le tableau
     );
 } catch (PDOException $e) {
-    die('Connexion échouée : ' . $e->getMessage());
+    die('Connexion echouee : ' . $e->getMessage());
 }

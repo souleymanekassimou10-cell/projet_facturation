@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-require_once __DIR__ . '/../config/database.php';
+//require_once __DIR__ . '/../config/database.php';
+require_once '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   header('Location: ../views/login.html');
@@ -12,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $email = trim($_POST['email'] ?? '');
 $motDePasse = $_POST['password'] ?? '';
+
 
 if ($email === '' || $motDePasse === '') {
   header('Location: ../views/login.html?error=1');
